@@ -200,7 +200,7 @@ export default async function Home() {
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
         The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user&apos;s microphone without triggering one of
+        finding a way to access the user's microphone without triggering one of
         those annoying permission dialogs.
       </Testimonial>
 
