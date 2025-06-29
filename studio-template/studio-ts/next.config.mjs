@@ -16,6 +16,7 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   output: 'export',
   basePath: process.env.NODE_ENV === 'production' ? '/python-ai-solutions-website' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/python-ai-solutions-website' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
