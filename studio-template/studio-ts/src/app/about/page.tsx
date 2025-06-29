@@ -43,7 +43,7 @@ function Culture() {
             are allowed to have LinkedIn profiles.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            We don't care when our team works just as long as they are working
+            We don&apos;t care when our team works just as long as they are working
             every waking second.
           </GridListItem>
           <GridListItem title="Compassion" invert>
@@ -197,7 +197,7 @@ export default function About() {
         </p>
 
         <p>
-          We're deeply committed to, and active participants in, the open source community. We're comfortable working internationally, and we've extensive experience delivering on projects with remote and global teams.
+          We&apos;re deeply committed to, and active participants in, the open source community. We&apos;re comfortable working internationally, and we&apos;ve extensive experience delivering on projects with remote and global teams.
         </p>
 
         <p>

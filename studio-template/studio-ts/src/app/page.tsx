@@ -174,7 +174,7 @@ function Services() {
                 From automating repetitive tasks to optimizing workflows, our services free up your resources, allowing you to focus on strategic business activities.
               </ListItem>
               <ListItem title="Custom AI Solutions">
-                Get AI solutions that are tailor-made for your business needs. Whether it's enhancing operational efficiency, improving customer experiences, or innovating your product offerings, our custom AI development is here to transform your vision into reality.
+                Get AI solutions that are tailor-made for your business needs. Whether it&apos;s enhancing operational efficiency, improving customer experiences, or innovating your product offerings, our custom AI development is here to transform your vision into reality.
               </ListItem>
               <ListItem title="AI Training and Support">
                 Empower your team with the knowledge to harness AI effectively. Our comprehensive training programs coupled with ongoing support ensure that your staff are well equipped to use AI tools and solutions.

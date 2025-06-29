@@ -9,11 +9,11 @@ export function ContactSection() {
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
             <h2 className="font-display text-3xl font-medium text-balance text-white sm:text-4xl">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <div className="mt-6 space-y-6 text-base text-neutral-300">
               <p>
-                We're always looking for new opportunities and are comfortable working internationally. We believe in cross-disciplinary collaboration and open communication because together we can create something greater than we could achieve on our own.
+                We&apos;re always looking for new opportunities and are comfortable working internationally. We believe in cross-disciplinary collaboration and open communication because together we can create something greater than we could achieve on our own.
               </p>
               <p>
                 Please get in touch to learn more about how we can help your organization achieve its goals.
