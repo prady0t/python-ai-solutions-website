@@ -53,7 +53,7 @@ export function Logo({
 }) {
   return (
     <svg
-      viewBox="0 0 280 32"
+      viewBox="0 0 32 32"
       aria-hidden="true"
       className={clsx(fillOnHover && 'group/logo', className)}
       {...props}
@@ -63,16 +63,6 @@ export function Logo({
         invert={invert}
         filled={filled}
       />
-      <text
-        x="45"
-        y="22"
-        className={clsx(
-          'font-display text-lg font-semibold',
-          invert ? 'fill-white' : 'fill-neutral-950'
-        )}
-      >
-        Python AI Solutions
-      </text>
     </svg>
   )
 }

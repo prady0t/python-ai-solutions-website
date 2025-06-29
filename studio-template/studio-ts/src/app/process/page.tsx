@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { type Metadata } from 'next'
 
 import { Blockquote } from '@/components/Blockquote'
@@ -11,6 +14,7 @@ import { PageIntro } from '@/components/PageIntro'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { TagList, TagListItem } from '@/components/TagList'
+import { Modal } from '@/components/Modal'
 import imageLaptop from '@/images/laptop.jpg'
 import imageMeeting from '@/images/meeting.jpg'
 import imageWhiteboard from '@/images/whiteboard.jpg'
@@ -20,10 +24,12 @@ function Section({
   title,
   image,
   children,
+  onLearnMore,
 }: {
   title: string
   image: React.ComponentPropsWithoutRef<typeof StylizedImage>
   children: React.ReactNode
+  onLearnMore: () => void
 }) {
   return (
     <Container className="group/section [counter-increment:section]">
@@ -47,6 +53,25 @@ function Section({
               {title}
             </h2>
             <div className="mt-6">{children}</div>
+            <button
+              onClick={onLearnMore}
+              className="mt-8 inline-flex items-center gap-x-2 text-sm font-semibold text-neutral-950 hover:text-neutral-600 transition-colors"
+            >
+              Learn More
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </FadeIn>
         </div>
       </div>
@@ -54,218 +79,241 @@ function Section({
   )
 }
 
-function Discover() {
+function Discover({ onLearnMore }: { onLearnMore: () => void }) {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section title="Integrity" image={{ src: imageWhiteboard }} onLearnMore={onLearnMore}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
-        </p>
-        <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
-        </p>
-        <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          Integrity is a multifaceted value that encompasses honesty, ethical conduct, reliability, accountability, respect for others, courage, transparency, and professionalism. Integrity guides us to align our actions with our words, ensuring that we conduct ourselves with unwavering moral principles both in the spotlight and behind the scenes. Integrity is not just a principle for us: it is a practice that we live by every day.
         </p>
       </div>
-
-      <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
-      </h3>
-      <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
-      </TagList>
     </Section>
   )
 }
 
-function Build() {
+function Build({ onLearnMore }: { onLearnMore: () => void }) {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="Digital Stewardship" image={{ src: imageWhiteboard, shape: 1 }} onLearnMore={onLearnMore}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
+          We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work. This involves enriching digital communities through active participation, knowledge sharing, and advocacy for open-source contributions and ethical standards within our industry.
         </p>
+
         <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
+          Our commitment extends to investing in the sustainability of critical open-source and digital platforms, especially those lacking commercial support. We believe in the democratizing effect of open-source software and open technologies, which thrive on community contributions and provide broader access to technology.
         </p>
+
         <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
+          We employ AI solutions—both proprietary and open—in a manner that is ethical, transparent, and aligned with societal benefit. This includes ensuring responsible data use, prioritizing privacy, and striving to eliminate biases in our AI implementations.
         </p>
       </div>
-
-      <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
-        className="mt-12"
-      >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
-      </Blockquote>
     </Section>
   )
 }
 
-function Deliver() {
+function Deliver({ onLearnMore }: { onLearnMore: () => void }) {
   return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+    <Section title="Antifragility" image={{ src: imageMeeting, shape: 2 }} onLearnMore={onLearnMore}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
-          <strong className="font-semibold text-neutral-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.
+          Antifragility is a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges. This core value stands at the heart of our business ethos, signifying our commitment to not only navigate but excel in the face of uncertainty and change.
         </p>
+
         <p>
-          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on social media.
-        </p>
-        <p>
-          We ensure that the main pages of the site are{' '}
-          <strong className="font-semibold text-neutral-950">
-            fully functional
-          </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-neutral-950">
-            maintenance
-          </strong>{' '}
-          retainer.
+          We proactively embrace the unpredictable, viewing every challenge and bit of randomness as a springboard for growth, innovation, and systemic enhancement. It shapes our approach to strategy, culture, and development, ensuring we benefit from disruptions.
         </p>
       </div>
-
-      <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
-      </h3>
-      <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
-        </ListItem>
-        <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
-        </ListItem>
-        <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
-        </ListItem>
-      </List>
     </Section>
   )
 }
 
-function Values() {
+function Deliver04({ onLearnMore }: { onLearnMore: () => void }) {
   return (
-    <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-linear-to-b from-neutral-50">
-        <GridPattern
-          className="absolute inset-0 h-full w-full mask-[linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-100 stroke-neutral-950/5"
-          yOffset={-270}
-        />
-      </div>
-
-      <SectionIntro
-        eyebrow="Our values"
-        title="Balancing reliability and innovation"
-      >
+    <Section title="Collaboration" image={{ src: imageLaptop, shape: 1 }} onLearnMore={onLearnMore}>
+      <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
+          Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision. It transcends the boundaries of internal teams and extends into our partnerships, customer relationships, and innovation processes.
         </p>
-      </SectionIntro>
 
-      <Container className="mt-24">
-        <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
-          </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
-          </GridListItem>
-          <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
-          </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
-          </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
-          </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
-          </GridListItem>
-        </GridList>
-      </Container>
-    </div>
+        <p>
+          By valuing collaboration, we champion a culture where cross-functional teamwork, open communication, and mutual respect are foundational. This value emphasizes the act of working together in a way that leverages our combined strengths, insights, and creativity to achieve outcomes that are greater than the sum of our parts.
+        </p>
+      </div>
+    </Section>
   )
-}
-
-export const metadata: Metadata = {
-  title: 'Our Process',
-  description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
 
 export default function Process() {
+  const [activeModal, setActiveModal] = useState<string | null>(null)
+
+  const openModal = (modalType: string) => {
+    setActiveModal(modalType)
+  }
+
+  const closeModal = () => {
+    setActiveModal(null)
+  }
+
   return (
     <RootLayout>
-      <PageIntro eyebrow="Our process" title="How we work">
+      <PageIntro title="What We Want">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          Our mission is to empower small and medium-sized enterprises (SMEs) and nonprofits to unlock their full potential, embrace AI technology, and thrive in a digital-first era. We are committed to the democratization of AI, believing in its capacity to transform the world for the better. Our goal is to level the technological playing field and provide organizations with accessible, customized AI solutions that enable them to fully harness their data and streamline their operations amid rapid technological advancements. In all our endeavors, we are guided by our core values of integrity, digital stewardship, antifragility, and collaboration.
         </p>
+        <div className="mt-8">
+          <button
+            onClick={() => openModal('how-we-work')}
+            className="inline-flex items-center gap-x-2 text-sm font-semibold text-neutral-950 hover:text-neutral-600 transition-colors"
+          >
+            Learn More
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
       </PageIntro>
 
+      <Container className="mt-24 sm:mt-32 lg:mt-40">
+        <FadeIn>
+          <h2 className="font-display text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl text-center">
+            Core values
+          </h2>
+        </FadeIn>
+      </Container>
+
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
-        <Discover />
-        <Build />
-        <Deliver />
+        <Discover onLearnMore={() => openModal('discover')} />
+        <Build onLearnMore={() => openModal('build')} />
+        <Deliver onLearnMore={() => openModal('deliver')} />
+        <Deliver04 onLearnMore={() => openModal('deliver04')} />
       </div>
 
-      <Values />
-
       <ContactSection />
+
+      {/* Modals */}
+      <Modal
+        isOpen={activeModal === 'how-we-work'}
+        onClose={closeModal}
+        title="Achieving Our Mission"
+      >
+        <div className="space-y-6">
+          <p>
+            Our company is founded on a bedrock of core values that guide our mission and shape our approach to business. Integrity is the heart of our ethos, ensuring that every action we take is done with honesty, ethical conduct, and unwavering moral principles. This foundational value fosters trust and transparency with our clients, employees, and partners, creating a positive ripple effect throughout our industry and community.
+          </p>
+          <p>
+            Our commitment to digital stewardship complements our integrity: we navigate the evolving digital landscape ethically, balancing the use of open-source ecosystems and proprietary technologies to drive forward-thinking solutions while considering the profound impact our work has on society.
+          </p>
+          <p>
+            Antifragility— a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world's inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
+          </p>
+          <p>
+            Collaboration is the thread that weaves together our values, amplifying their impact. By fostering a culture of collaboration both internally and externally, we harness the collective power of diverse minds working towards a shared vision. This collaborative spirit extends beyond our organizational boundaries, engaging customers, communities, and partners in a co-creative process that ensures our solutions are grounded in real-world needs.
+          </p>
+          <p>
+            Together, these values form the pillars of our company and propel us towards achieving our mission of delivering exceptional value, driving long-lasting growth, and making a meaningful difference in the world.
+          </p>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={activeModal === 'discover'}
+        onClose={closeModal}
+        title="Integrity"
+      >
+        <div className="space-y-6">
+          <h3 className="text-xl font-semibold text-neutral-950">How we practice integrity:</h3>
+          <ul className="list-disc list-inside space-y-2 text-neutral-600">
+            <li><strong>Honesty and truthfulness:</strong> Ensuring all communications and actions are truthful and transparent.</li>
+            <li><strong>Ethical conduct:</strong> Making decisions that are not only legal but also ethically sound.</li>
+            <li><strong>Reliability and consistency:</strong> Following through on commitments and maintaining consistency in our actions.</li>
+            <li><strong>Accountability:</strong> Taking responsibility for our actions, admitting mistakes, and learning from them.</li>
+            <li><strong>Respect for others:</strong> Engaging with everyone respectfully and valuing diverse perspectives.</li>
+            <li><strong>Courage:</strong> Standing up for what is right, even when it is challenging or unpopular.</li>
+            <li><strong>Transparency:</strong> Being open about our processes, successes, and areas for improvement.</li>
+            <li><strong>Professionalism:</strong> Adhering to the highest standards of our profession and continuously striving for excellence.</li>
+          </ul>
+          <h3 className="text-xl font-semibold text-neutral-950">Why it matters:</h3>
+          <p>
+            Integrity is essential for building and maintaining trust with our clients, employees, and partners. It fosters a culture of openness, fairness, and respect, which are crucial for long-term success. By committing to integrity, we not only enhance our reputation but also create a positive impact on our community and industry. This commitment empowers us to make decisions with confidence and courage, knowing they are rooted in ethical considerations and respect for all stakeholders.
+          </p>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={activeModal === 'build'}
+        onClose={closeModal}
+        title="Digital Stewardship"
+      >
+        <div className="space-y-6">
+          <h3 className="text-xl font-semibold text-neutral-950">How we practice digital stewardship:</h3>
+          <ul className="list-disc list-inside space-y-2 text-neutral-600">
+            <li><strong>Community engagement:</strong> Enriching digital communities through active participation, knowledge sharing, and advocacy for open-source contributions and ethical standards within our industry.</li>
+            <li><strong>Financial support:</strong> Investing in the sustainability of critical open-source and digital platforms, especially those lacking commercial support.</li>
+            <li><strong>Responsible integration of AI:</strong> Employing AI solutions—both proprietary and open—in a manner that is ethical, transparent, and aligned with societal benefit.</li>
+            <li><strong>Ethical data practices:</strong> Ensuring responsible data use, prioritizing privacy, and striving to eliminate biases.</li>
+          </ul>
+          <h3 className="text-xl font-semibold text-neutral-950">Why it matters:</h3>
+          <p>
+            The digital infrastructure, much like its physical counterpart, requires active engagement for its sustenance and growth. Open-source software and open technologies/platforms (which thrive on community contributions) have a profound democratizing effect on technology access. At the same time, blending this open innovation with proprietary tools presents opportunity. By adopting digital stewardship, we commit to thoughtful engagement with and improvement of this ecosystem, mindful of the ethical complexities inherent in AI development and deployment. This stewardship ensures that our contributions and choices both bolster the health of the digital commons and align with our commitment to ethical and sustainable business practices.
+          </p>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={activeModal === 'deliver'}
+        onClose={closeModal}
+        title="Antifragility"
+      >
+        <div className="space-y-6">
+          <h3 className="text-xl font-semibold text-neutral-950">How we practice antifragility:</h3>
+          <ul className="list-disc list-inside space-y-2 text-neutral-600">
+            <li><strong>Embracing volatility:</strong> harnessing unpredictability as a catalyst for strategic and creative breakthroughs.</li>
+            <li><strong>Proactive innovation:</strong> Seeing stressors as essential drivers for our innovation process, prompting us to venture into new territories, solutions, and markets.</li>
+            <li><strong>Systemic growth:</strong> Designing our organization to ensure that every aspect of our business is primed to not just cope with but thrive under conditions of change, fostering an ecosystem that grows more capable and robust through trials.</li>
+            <li><strong>Forward-thinking mindset:</strong> Guiding us to make decisions that ensure enduring success and relevance in a fluctuating world.</li>
+          </ul>
+          <h3 className="text-xl font-semibold text-neutral-950">Why it matters:</h3>
+          <p>
+            The swift advancement of technology tends to exacerbate the divide between large corporations and smaller organizations, with the latter finding it challenging to keep pace because of limited resources. However, AI solutions that embody the principle of antifragility are designed to flourish in innovative and fast-paced environments. By adapting to the varied and evolving requirements of SMEs and nonprofits, they improve during periods of rapid technological advancement, becoming both more cost-effective and accessible.
+          </p>
+          <p>
+            Antifragility as a core value means that we are committed to not only surviving but thriving in the face of industry disruptions. For SMEs and nonprofits, partnering with a provider that embraces this value creates a strategic advantage. They gain access to AI solutions that are at the forefront of navigating and capitalizing on technological disruptions, enabling these smaller entities to punch above their weight in a competitive digital economy.
+          </p>
+          <p>
+            The principle of antifragility encourages continuous learning and evolution based on feedback and environmental changes. This approach fosters a culture of collaboration and innovation, where AI technologies evolve in response to the real-world experiences and the different challenges faced by a diverse user base of SMEs and nonprofits. By prioritizing solutions that grow more robust and effective through user interaction, antifragility ensures that AI democratization is not a static goal but a dynamic process that continually seeks to lower barriers to access and use.
+          </p>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={activeModal === 'deliver04'}
+        onClose={closeModal}
+        title="Collaboration"
+      >
+        <div className="space-y-6">
+          <h3 className="text-xl font-semibold text-neutral-950">How we practice collaboration:</h3>
+          <ul className="list-disc list-inside space-y-2 text-neutral-600">
+            <li><strong>Cross-functional integration:</strong> Encouraging teams from different areas of the business to work together, breaking down silos and fostering a holistic understanding of our goals and challenges.</li>
+            <li><strong>Strategic partnerships:</strong> Actively seeking partnerships and alliances that complement our strengths, fill gaps in our expertise, and expand our reach, creating mutually beneficial relationships.</li>
+            <li><strong>Customer and community engagement:</strong> Involving customers and community members in the development and refinement of our products and services, ensuring our solutions are both innovative and relevant.</li>
+            <li><strong>Co-creation and open innovation:</strong> Embracing the principles of co-creation and open innovation to involve a wider community in our problem-solving processes, enriching our innovation pipeline with a diversity of ideas and perspectives.</li>
+          </ul>
+          <h3 className="text-xl font-semibold text-neutral-950">Why it matters:</h3>
+          <p>
+            Through collaboration, we not only accelerate our own growth but also contribute to the advancement of our industry and the betterment of society. Collaboration amplifies our impact, enabling us to achieve what we could not accomplish alone. Moreover, engaging customers and communities in our collaborative processes ensures that our solutions are grounded in real-world needs and have a positive impact.
+          </p>
+        </div>
+      </Modal>
     </RootLayout>
   )
 }

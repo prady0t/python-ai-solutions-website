@@ -1,36 +1,73 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 
+import { Blockquote } from '@/components/Blockquote'
+import { Border } from '@/components/Border'
+import { Button } from '@/components/Button'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
-import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
-import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
-import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
-import logoUnseal from '@/images/clients/unseal/logo-light.svg'
+import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
+import logoFamilyFund from '@/images/clients/family-fund/logo-dark.svg'
+import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
+import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
+import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
+import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
+import logoPhobiaLight from '@/images/clients/phobia/logo-dark.svg'
+import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
+import logoBrightPathLight from '@/images/clients/bright-path/logo-light.svg'
+import logoFamilyFundLight from '@/images/clients/family-fund/logo-light.svg'
+import logoGreenLifeLight from '@/images/clients/green-life/logo-light.svg'
+import logoHomeWorkLight from '@/images/clients/home-work/logo-light.svg'
+import logoMailSmirkLight from '@/images/clients/mail-smirk/logo-light.svg'
+import logoNorthAdventuresLight from '@/images/clients/north-adventures/logo-light.svg'
+import logoPhobiaLightLight from '@/images/clients/phobia/logo-light.svg'
+import logoUnsealLight from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
-import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
 const clients = [
-  ['Phobia', logoPhobiaLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['Phobia', logoPhobiaLightLight],
+  ['Family Fund', logoFamilyFundLight],
+  ['Unseal', logoUnsealLight],
+  ['Mail Smirk', logoMailSmirkLight],
+  ['Home Work', logoHomeWorkLight],
+  ['Green Life', logoGreenLifeLight],
+  ['Bright Path', logoBrightPathLight],
+  ['North Adventures', logoNorthAdventuresLight],
+]
+
+const projects = [
+  {
+    client: 'FamilyFund',
+    logo: logoFamilyFund,
+    year: '2023',
+    testimonial: {
+      content: 'Python AI Solutions transformed our vision into a reality. Their expertise in AI and data analytics helped us create a platform that truly serves our community.',
+      author: 'Sarah Johnson, CEO'
+    }
+  },
+  {
+    client: 'Unseal',
+    logo: logoUnseal,
+    year: '2022',
+    testimonial: {
+      content: 'The team at Python AI Solutions delivered an innovative solution that revolutionized how we think about health data ownership and blockchain technology.',
+      author: 'Michael Chen, CTO'
+    }
+  },
+  {
+    client: 'Phobia',
+    logo: logoPhobiaLight,
+    year: '2022',
+    testimonial: {
+      content: 'Working with Python AI Solutions was incredible. They understood our unique concept and built an AI-powered matching system that exceeded our expectations.',
+      author: 'Emma Rodriguez, Founder'
+    }
+  },
 ]
 
 function Clients() {
@@ -62,11 +99,7 @@ function Clients() {
   )
 }
 
-function CaseStudies({
-  caseStudies,
-}: {
-  caseStudies: Array<MDXEntry<CaseStudy>>
-}) {
+function CaseStudies() {
   return (
     <>
       <SectionIntro
@@ -80,38 +113,25 @@ function CaseStudies({
       </SectionIntro>
       <Container className="mt-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {caseStudies.map((caseStudy) => (
-            <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                <h3>
-                  <Link href={caseStudy.href}>
-                    <span className="absolute inset-0 rounded-3xl" />
-                    <Image
-                      src={caseStudy.logo}
-                      alt={caseStudy.client}
-                      className="h-16 w-16"
-                      unoptimized
-                    />
-                  </Link>
+          {projects.map((project) => (
+            <FadeIn key={project.client} className="flex">
+              <article className="relative flex w-full flex-col rounded-3xl p-4 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-6">
+                <h3 className="flex justify-center">
+                  <Image
+                    src={project.logo}
+                    alt={project.client}
+                    className="h-32 w-32"
+                    unoptimized
+                  />
                 </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
+                {project.testimonial && (
+                  <Blockquote
+                    author={project.testimonial.author}
+                    className="mt-6"
                   >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
-                  <span>Case study</span>
-                </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                  {caseStudy.title}
-                </p>
-                <p className="mt-4 text-base text-neutral-600">
-                  {caseStudy.description}
-                </p>
+                    {project.testimonial.content}
+                  </Blockquote>
+                )}
               </article>
             </FadeIn>
           ))}
@@ -145,24 +165,27 @@ function Services() {
               />
             </FadeIn>
           </div>
-          <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
-            <ListItem title="Machine Learning Development">
-              We build custom ML models using Python frameworks like TensorFlow, 
-              PyTorch, and scikit-learn to solve your specific business problems.
-            </ListItem>
-            <ListItem title="AI-Powered Applications">
-              We develop intelligent applications that leverage AI to automate 
-              processes, enhance user experiences, and provide predictive insights.
-            </ListItem>
-            <ListItem title="Data Science & Analytics">
-              We transform your data into actionable insights using advanced 
-              analytics, predictive modeling, and data visualization techniques.
-            </ListItem>
-            <ListItem title="AI Integration & Consulting">
-              We help you integrate AI into existing systems and provide 
-              strategic consulting to maximize your AI investment returns.
-            </ListItem>
-          </List>
+          <div className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
+            <List>
+              <ListItem title="Data Analytics and Insight Generation">
+                Our data analytics services help you make informed decisions, uncover new opportunities, and optimize your business processes for maximum efficiency.
+              </ListItem>
+              <ListItem title="Automation Services">
+                From automating repetitive tasks to optimizing workflows, our services free up your resources, allowing you to focus on strategic business activities.
+              </ListItem>
+              <ListItem title="Custom AI Solutions">
+                Get AI solutions that are tailor-made for your business needs. Whether it's enhancing operational efficiency, improving customer experiences, or innovating your product offerings, our custom AI development is here to transform your vision into reality.
+              </ListItem>
+              <ListItem title="AI Training and Support">
+                Empower your team with the knowledge to harness AI effectively. Our comprehensive training programs coupled with ongoing support ensure that your staff are well equipped to use AI tools and solutions.
+              </ListItem>
+            </List>
+            <div className="mt-8">
+              <Button href="/work">
+                Learn More
+              </Button>
+            </div>
+          </div>
         </div>
       </Container>
     </>
@@ -174,35 +197,32 @@ export const metadata: Metadata = {
     'We are a Python AI solutions company specializing in machine learning, data science, and intelligent automation.',
 }
 
-export default async function Home() {
-  let caseStudies = (await loadCaseStudies()).slice(0, 3)
-
+export default function Home() {
   return (
     <RootLayout>
       <Container className="mt-24 sm:mt-32 md:mt-56">
-        <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
-            Python <span style={{ color: '#32bbff' }}>AI</span><br />
-            <span className="text-4xl sm:text-6xl">SOLUTIONS</span>
-          </h1>
-          <p className="mt-6 text-xl text-neutral-600">
-            We are committed to the democratization of AI, believing in its capacity to transform the world for the better. Our goal is to level the technological playing field and provide organizations with accessible, customized AI solutions that enable them to fully harness their data and streamline their operations amid rapid technological advancements.
-          </p>
+        <FadeIn>
+          <div className="max-w-2xl">
+            <div className="flex justify-start mb-6">
+              <Image
+                src="/Python-AI-Solutuons-Logo.webp"
+                alt="Python AI Solutions Logo"
+                width={600}
+                height={240}
+                className="h-60 w-auto"
+                priority
+              />
+            </div>
+            <p className="mt-6 text-xl text-neutral-600">
+              We are committed to the democratization of AI, believing in its capacity to transform the world for the better. Our goal is to level the technological playing field and provide organizations with accessible, customized AI solutions that enable them to fully harness their data and streamline their operations amid rapid technological advancements.
+            </p>
+          </div>
         </FadeIn>
       </Container>
 
       <Clients />
 
-      <CaseStudies caseStudies={caseStudies} />
-
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
-      >
-        The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user&apos;s microphone without triggering one of
-        those annoying permission dialogs.
-      </Testimonial>
+      <CaseStudies />
 
       <Services />
 

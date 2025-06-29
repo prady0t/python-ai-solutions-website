@@ -2,12 +2,12 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 
 import { Border } from '@/components/Border'
+import { Button } from '@/components/Button'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { GridList, GridListItem } from '@/components/GridList'
 import { PageIntro } from '@/components/PageIntro'
-import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import imageAngelaFisher from '@/images/team/angela-fisher.jpg'
@@ -22,7 +22,6 @@ import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
 import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
 import imageMichaelFoster from '@/images/team/michael-foster.jpg'
 import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
-import { loadArticles } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
 function Culture() {
@@ -44,7 +43,7 @@ function Culture() {
             are allowed to have LinkedIn profiles.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working
+            We don't care when our team works just as long as they are working
             every waking second.
           </GridListItem>
           <GridListItem title="Compassion" invert>
@@ -180,54 +179,40 @@ function Team() {
 }
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'Experience & Expertise',
   description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
+    'With backgrounds in scientific research, data science, programming, and software engineering, our team has diverse and valuable experience in providing software solutions.',
 }
 
-export default async function About() {
-  let blogArticles = (await loadArticles()).slice(0, 2)
-
+export default function About() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="About us" title="Our strength is collaboration">
+      <PageIntro title="Experience & Expertise">
         <p>
-          We believe that our strength lies in our collaborative approach, which
-          puts our clients at the center of everything we do.
+          With backgrounds in scientific research, data science, programming, and software engineering, our team has diverse and valuable experience in providing software solutions to organizations operating in a variety of sectors, industries, and geographies and at different stages.
         </p>
-        <div className="mt-10 max-w-2xl space-y-6 text-base">
-          <p>
-            Studio was started by three friends who noticed that developer
-            studios were charging clients double what an in-house team would
-            cost. Since the beginning, we have been committed to doing things
-            differently by charging triple instead.
-          </p>
-          <p>
-            At Studio, we’re more than just colleagues — we’re a family. This
-            means we pay very little and expect people to work late. We want our
-            employees to bring their whole selves to work. In return, we just
-            ask that they keep themselves there until at least 6:30pm.
-          </p>
+
+        <p>
+          Our team has experience working with scientific research institutions, government agencies, energy companies, business infrastructure providers, financial institutions, non-profits, startups, and more.
+        </p>
+
+        <p>
+          We're deeply committed to, and active participants in, the open source community. We're comfortable working internationally, and we've extensive experience delivering on projects with remote and global teams.
+        </p>
+
+        <p>
+          Check out the GitHub below to view some of our projects, code, and more.
+        </p>
+        <div className="mt-8">
+          <Button href="https://github.com/leej3" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </Button>
         </div>
       </PageIntro>
-      <Container className="mt-16">
-        <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
-        </StatList>
-      </Container>
 
       <Culture />
 
       <Team />
-
-      <PageLinks
-        className="mt-24 sm:mt-32 lg:mt-40"
-        title="From the blog"
-        intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
-        pages={blogArticles}
-      />
 
       <ContactSection />
     </RootLayout>

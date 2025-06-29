@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
@@ -122,7 +123,14 @@ export function Footer() {
         </div>
         <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home">
-            <Logo className="h-8" fillOnHover />
+            <Image
+              src="/snakebrain.svg"
+              alt="SnakeBrain Logo"
+              width={180}
+              height={60}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
           <p className="text-sm text-neutral-700">
             © Studio Agency Inc. {new Date().getFullYear()}
