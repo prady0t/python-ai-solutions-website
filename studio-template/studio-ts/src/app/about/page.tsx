@@ -187,7 +187,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <RootLayout>
-      <PageIntro title="Experience & Expertise">
+      <PageIntro eyebrow="About Us" title="Experience & Expertise">
         <p>
           With backgrounds in scientific research, data science, programming, and software engineering, our team has diverse and valuable experience in providing software solutions to organizations operating in a variety of sectors, industries, and geographies and at different stages.
         </p>

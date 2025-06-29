@@ -47,7 +47,7 @@ const projects = [
     year: '2023',
     testimonial: {
       content: 'Python AI Solutions transformed our vision into a reality. Their expertise in AI and data analytics helped us create a platform that truly serves our community.',
-      author: 'Sarah Johnson, CEO'
+      author: { name: 'Sarah Johnson', role: 'CEO' }
     }
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     year: '2022',
     testimonial: {
       content: 'The team at Python AI Solutions delivered an innovative solution that revolutionized how we think about health data ownership and blockchain technology.',
-      author: 'Michael Chen, CTO'
+      author: { name: 'Michael Chen', role: 'CTO' }
     }
   },
   {
@@ -65,7 +65,7 @@ const projects = [
     year: '2022',
     testimonial: {
       content: 'Working with Python AI Solutions was incredible. They understood our unique concept and built an AI-powered matching system that exceeded our expectations.',
-      author: 'Emma Rodriguez, Founder'
+      author: { name: 'Emma Rodriguez', role: 'Founder' }
     }
   },
 ]

@@ -156,7 +156,7 @@ export default function Process() {
 
   return (
     <RootLayout>
-      <PageIntro title="What We Want">
+      <PageIntro eyebrow="Our Mission" title="What We Want">
         <p>
           Our mission is to empower small and medium-sized enterprises (SMEs) and nonprofits to unlock their full potential, embrace AI technology, and thrive in a digital-first era. We are committed to the democratization of AI, believing in its capacity to transform the world for the better. Our goal is to level the technological playing field and provide organizations with accessible, customized AI solutions that enable them to fully harness their data and streamline their operations amid rapid technological advancements. In all our endeavors, we are guided by our core values of integrity, digital stewardship, antifragility, and collaboration.
         </p>
