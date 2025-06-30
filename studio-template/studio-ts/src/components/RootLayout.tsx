@@ -16,6 +16,7 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
 import { Logo, Logomark } from '@/components/Logo'
+import { getAssetPath } from '@/lib/basePath'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -37,7 +38,7 @@ function Header({
           aria-label="Home"
         >
           <Image
-            src="/snakebrain.svg"
+            src={getAssetPath("/snakebrain.svg")}
             alt="SnakeBrain Logo"
             width={180}
             height={60}

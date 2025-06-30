@@ -5,6 +5,9 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import { GridPattern } from '@/components/GridPattern'
+import { GridList, GridListItem } from '@/components/GridList'
+import { getAssetPath } from '@/lib/basePath'
 
 const navigation = [
   {
@@ -124,7 +127,7 @@ export function Footer() {
         <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home">
             <Image
-              src="/snakebrain.svg"
+              src={getAssetPath('/snakebrain.svg')}
               alt="SnakeBrain Logo"
               width={180}
               height={60}

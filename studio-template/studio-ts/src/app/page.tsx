@@ -28,6 +28,7 @@ import logoPhobiaLightLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnsealLight from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { RootLayout } from '@/components/RootLayout'
+import { getAssetPath } from '@/lib/basePath'
 
 const clients = [
   ['Phobia', logoPhobiaLightLight],
@@ -205,7 +206,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="flex justify-start mb-6">
               <Image
-                src="/Python-AI-Solutuons-Logo.webp"
+                src={getAssetPath("/Python-AI-Solutuons-Logo.webp")}
                 alt="Python AI Solutions Logo"
                 width={600}
                 height={240}
