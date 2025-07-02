@@ -7,6 +7,7 @@ import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
+import { getAssetPath } from '@/lib/basePath'
 
 const services = [
   {
@@ -67,15 +68,129 @@ function ServicesList() {
         {services.map((service, index) => (
           <FadeIn key={service.title}>
             <article>
-              <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
-                <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
-                  <div className="sm:flex sm:items-center sm:gap-x-6 lg:block">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-neutral-950 text-white">
-                      <span className="text-xl font-semibold">{index + 1}</span>
-                    </div>
+              <Border className="grid grid-cols-1 gap-x-8 gap-y-8 pt-16 lg:grid-cols-12">
+                {index === 0 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/services_1.png")}
+                      alt="Data Analytics and Insight Generation"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
                   </div>
-                </div>
-                <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
+                )}
+                {index === 1 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 2.png")}
+                      alt="Automation Services"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 3.png")}
+                      alt="Predictive Analytics"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 3 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 4.png")}
+                      alt="Collaborative AI Projects"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 4 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 5.png")}
+                      alt="Custom AI Solutions"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 5 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 6.png")}
+                      alt="AI Training and Support"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 6 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 7.png")}
+                      alt="Natural Language Processing (NLP)"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 7 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 8.png")}
+                      alt="Sustainability Solutions"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 8 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 9.png")}
+                      alt="AI Consultation and Strategic Planning"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 9 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 10.png")}
+                      alt="Ethical AI Advisory"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                {index === 10 && (
+                  <div className="lg:col-span-4 flex justify-center items-center">
+                    <Image
+                      src={getAssetPath("/service 11.png")}
+                      alt="Images processing"
+                      width={400}
+                      height={300}
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                )}
+                <div className="lg:col-span-8 lg:pt-8">
                   <p className="font-display text-4xl font-medium text-neutral-950">
                     {service.title}
                   </p>

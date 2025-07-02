@@ -1,5 +1,8 @@
+'use client'
+
 import { type Metadata } from 'next'
 import Image from 'next/image'
+import { useState } from 'react'
 
 import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
@@ -10,49 +13,303 @@ import { GridList, GridListItem } from '@/components/GridList'
 import { PageIntro } from '@/components/PageIntro'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
-import imageAngelaFisher from '@/images/team/angela-fisher.jpg'
-import imageBenjaminRussel from '@/images/team/benjamin-russel.jpg'
-import imageBlakeReid from '@/images/team/blake-reid.jpg'
-import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
-import imageDriesVincent from '@/images/team/dries-vincent.jpg'
-import imageEmmaDorsey from '@/images/team/emma-dorsey.jpg'
-import imageJeffreyWebb from '@/images/team/jeffrey-webb.jpg'
-import imageKathrynMurphy from '@/images/team/kathryn-murphy.jpg'
-import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
-import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
-import imageMichaelFoster from '@/images/team/michael-foster.jpg'
-import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
 import { RootLayout } from '@/components/RootLayout'
+import { Modal } from '@/components/Modal'
+import { getAssetPath } from '@/lib/basePath'
 
 function Culture() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isIntegrityModalOpen, setIsIntegrityModalOpen] = useState(false)
+  const [isTrustModalOpen, setIsTrustModalOpen] = useState(false)
+  const [isCompassion1ModalOpen, setIsCompassion1ModalOpen] = useState(false)
+  const [isCompassion2ModalOpen, setIsCompassion2ModalOpen] = useState(false)
+
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
-      <SectionIntro
-        eyebrow="Our culture"
-        title="Balance your passion with your passion for life."
-        invert
+    <>
+      <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
+        <SectionIntro
+          eyebrow="Our Mission"
+          title="What We Want"
+          invert
+        >
+          <p>
+            Our mission is to empower SMEs and nonprofits with accessible AI solutions, democratizing technology to help organizations thrive in the digital era. We provide customized AI solutions that enable organizations to harness their data and streamline operations.
+          </p>
+          <div className="mt-8">
+            <Button onClick={() => setIsModalOpen(true)} invert>
+              Learn More
+            </Button>
+          </div>
+        </SectionIntro>
+        <Container className="mt-16">
+          <h3 className="font-display text-base font-semibold text-white mb-12">Core Values</h3>
+          <GridList>
+            <GridListItem title="Integrity" invert>
+              This captures the essence of integrity as a core value that encompasses multiple virtues and guides consistent ethical behavior.
+            </GridListItem>
+            <GridListItem title="Digital Stewardship" invert>
+              We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work.
+            </GridListItem>
+            <GridListItem title="Antifragility" invert>
+              Antifragility is a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges.
+            </GridListItem>
+            <GridListItem title="Collaboration" invert>
+              Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision
+            </GridListItem>
+          </GridList>
+          
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="pl-8">
+              <button
+                onClick={() => setIsIntegrityModalOpen(true)}
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+              >
+                Learn More
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="pl-8">
+              <button
+                onClick={() => setIsTrustModalOpen(true)}
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+              >
+                Learn More
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="pl-8">
+              <button
+                onClick={() => setIsCompassion1ModalOpen(true)}
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+              >
+                Learn More
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="pl-8">
+              <button
+                onClick={() => setIsCompassion2ModalOpen(true)}
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+              >
+                Learn More
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </Container>
+      </div>
+      
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Our Mission & Core Values"
       >
-        <p>
-          We are a group of like-minded people who share the same core values.
-        </p>
-      </SectionIntro>
-      <Container className="mt-16">
-        <GridList>
-          <GridListItem title="Loyalty" invert>
-            Our team has been with us since the beginning because none of them
-            are allowed to have LinkedIn profiles.
-          </GridListItem>
-          <GridListItem title="Trust" invert>
-            We don&apos;t care when our team works just as long as they are working
-            every waking second.
-          </GridListItem>
-          <GridListItem title="Compassion" invert>
-            You never know what someone is going through at home and we make
-            sure to never find out.
-          </GridListItem>
-        </GridList>
-      </Container>
-    </div>
+        <div className="space-y-8">
+          <p>
+            Our company is founded on a bedrock of core values that guide our mission and shape our approach to business. Integrity is the heart of our ethos, ensuring that every action we take is done with honesty, ethical conduct, and unwavering moral principles. This foundational value fosters trust and transparency with our clients, employees, and partners, creating a positive ripple effect throughout our industry and community.
+          </p>
+          <p>
+            Our commitment to digital stewardship complements our integrity: we navigate the evolving digital landscape ethically, balancing the use of open-source ecosystems and proprietary technologies to drive forward-thinking solutions while considering the profound impact our work has on society.
+          </p>
+          <p>
+            Antifragility— a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world's inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
+          </p>
+          <p>
+            Collaboration is the thread that weaves together our values, amplifying their impact. By fostering a culture of collaboration both internally and externally, we harness the collective power of diverse minds working towards a shared vision. This collaborative spirit extends beyond our organizational boundaries, engaging customers, communities, and partners in a co-creative process that ensures our solutions are grounded in real-world needs.
+          </p>
+          <p>
+            Together, these values form the pillars of our company and propel us towards achieving our mission of delivering exceptional value, driving long-lasting growth, and making a meaningful difference in the world.
+          </p>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={isIntegrityModalOpen}
+        onClose={() => setIsIntegrityModalOpen(false)}
+        title="Integrity"
+      >
+        <div className="space-y-6">
+          <p>
+            Integrity is a multifaceted value that encompasses honesty, ethical conduct, reliability, accountability, respect for others, courage, transparency, and professionalism. Integrity guides us to align our actions with our words, ensuring that we conduct ourselves with unwavering moral principles both in the spotlight and behind the scenes. Integrity is not just a principle for us: it is a practice that we live by every day.
+          </p>
+          
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">How we practice integrity:</h3>
+            <ul className="list-disc list-inside space-y-2 text-neutral-600">
+              <li><strong>Honesty and truthfulness:</strong> Ensuring all communications and actions are truthful and transparent.</li>
+              <li><strong>Ethical conduct:</strong> Making decisions that are not only legal but also ethically sound.</li>
+              <li><strong>Reliability and consistency:</strong> Following through on commitments and maintaining consistency in our actions.</li>
+              <li><strong>Accountability:</strong> Taking responsibility for our actions, admitting mistakes, and learning from them.</li>
+              <li><strong>Respect for others:</strong> Engaging with everyone respectfully and valuing diverse perspectives.</li>
+              <li><strong>Courage:</strong> Standing up for what is right, even when it is challenging or unpopular.</li>
+              <li><strong>Transparency:</strong> Being open about our processes, successes, and areas for improvement.</li>
+              <li><strong>Professionalism:</strong> Adhering to the highest standards of our profession and continuously striving for excellence.</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">Why it matters:</h3>
+            <p>
+              Integrity is essential for building and maintaining trust with our clients, employees, and partners. It fosters a culture of openness, fairness, and respect, which are crucial for long-term success. By committing to integrity, we not only enhance our reputation but also create a positive impact on our community and industry. This commitment empowers us to make decisions with confidence and courage, knowing they are rooted in ethical considerations and respect for all stakeholders.
+            </p>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={isTrustModalOpen}
+        onClose={() => setIsTrustModalOpen(false)}
+        title="Digital Stewardship"
+      >
+        <div className="space-y-6">
+          <p>
+            We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work. This involves enriching digital communities through active participation, knowledge sharing, and advocacy for open-source contributions and ethical standards within our industry.
+          </p>
+          
+          <p>
+            Our commitment extends to investing in the sustainability of critical open-source and digital platforms, especially those lacking commercial support. We believe in the democratizing effect of open-source software and open technologies, which thrive on community contributions and provide broader access to technology.
+          </p>
+          
+          <p>
+            We employ AI solutions—both proprietary and open—in a manner that is ethical, transparent, and aligned with societal benefit. This includes ensuring responsible data use, prioritizing privacy, and striving to eliminate biases in our AI implementations.
+          </p>
+          
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">How we practice digital stewardship:</h3>
+            <ul className="list-disc list-inside space-y-2 text-neutral-600">
+              <li><strong>Community engagement:</strong> Enriching digital communities through active participation, knowledge sharing, and advocacy for open-source contributions and ethical standards within our industry.</li>
+              <li><strong>Financial support:</strong> Investing in the sustainability of critical open-source and digital platforms, especially those lacking commercial support.</li>
+              <li><strong>Responsible integration of AI:</strong> Employing AI solutions—both proprietary and open—in a manner that is ethical, transparent, and aligned with societal benefit.</li>
+              <li><strong>Ethical data practices:</strong> Ensuring responsible data use, prioritizing privacy, and striving to eliminate biases.</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">Why it matters:</h3>
+            <p>
+              The digital infrastructure, much like its physical counterpart, requires active engagement for its sustenance and growth. Open-source software and open technologies/platforms (which thrive on community contributions) have a profound democratizing effect on technology access. At the same time, blending this open innovation with proprietary tools presents opportunity. By adopting digital stewardship, we commit to thoughtful engagement with and improvement of this ecosystem, mindful of the ethical complexities inherent in AI development and deployment. This stewardship ensures that our contributions and choices both bolster the health of the digital commons and align with our commitment to ethical and sustainable business practices.
+            </p>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={isCompassion1ModalOpen}
+        onClose={() => setIsCompassion1ModalOpen(false)}
+        title="Antifragility"
+      >
+        <div className="space-y-6">
+          <p>
+            Antifragility is a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges. This core value stands at the heart of our business ethos, signifying our commitment to not only navigate but excel in the face of uncertainty and change.
+          </p>
+          <p>
+            We proactively embrace the unpredictable, viewing every challenge and bit of randomness as a springboard for growth, innovation, and systemic enhancement. It shapes our approach to strategy, culture, and development, ensuring we benefit from disruptions.
+          </p>
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">How we practice antifragility:</h3>
+            <ul className="list-disc list-inside space-y-2 text-neutral-600">
+              <li><strong>Embracing volatility:</strong> harnessing unpredictability as a catalyst for strategic and creative breakthroughs.</li>
+              <li><strong>Proactive innovation:</strong> Seeing stressors as essential drivers for our innovation process, prompting us to venture into new territories, solutions, and markets.</li>
+              <li><strong>Systemic growth:</strong> Designing our organization to ensure that every aspect of our business is primed to not just cope with but thrive under conditions of change, fostering an ecosystem that grows more capable and robust through trials.</li>
+              <li><strong>Forward-thinking mindset:</strong> Guiding us to make decisions that ensure enduring success and relevance in a fluctuating world.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">Why it matters:</h3>
+            <p>
+              The swift advancement of technology tends to exacerbate the divide between large corporations and smaller organizations, with the latter finding it challenging to keep pace because of limited resources. However, AI solutions that embody the principle of antifragility are designed to flourish in innovative and fast-paced environments. By adapting to the varied and evolving requirements of SMEs and nonprofits, they improve during periods of rapid technological advancement, becoming both more cost-effective and accessible.
+            </p>
+            <p>
+              Antifragility as a core value means that we are committed to not only surviving but thriving in the face of industry disruptions. For SMEs and nonprofits, partnering with a provider that embraces this value creates a strategic advantage. They gain access to AI solutions that are at the forefront of navigating and capitalizing on technological disruptions, enabling these smaller entities to punch above their weight in a competitive digital economy.
+            </p>
+            <p>
+              The principle of antifragility encourages continuous learning and evolution based on feedback and environmental changes. This approach fosters a culture of collaboration and innovation, where AI technologies evolve in response to the real-world experiences and the different challenges faced by a diverse user base of SMEs and nonprofits. By prioritizing solutions that grow more robust and effective through user interaction, antifragility ensures that AI democratization is not a static goal but a dynamic process that continually seeks to lower barriers to access and use.
+            </p>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={isCompassion2ModalOpen}
+        onClose={() => setIsCompassion2ModalOpen(false)}
+        title="Collaboration"
+      >
+        <div className="space-y-6">
+          <p>
+            Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision. It transcends the boundaries of internal teams and extends into our partnerships, customer relationships, and innovation processes.
+          </p>
+          <p>
+            By valuing collaboration, we champion a culture where cross-functional teamwork, open communication, and mutual respect are foundational. This value emphasizes the act of working together in a way that leverages our combined strengths, insights, and creativity to achieve outcomes that are greater than the sum of our parts.
+          </p>
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">How we practice collaboration:</h3>
+            <ul className="list-disc list-inside space-y-2 text-neutral-600">
+              <li><strong>Cross-functional integration:</strong> Encouraging teams from different areas of the business to work together, breaking down silos and fostering a holistic understanding of our goals and challenges.</li>
+              <li><strong>Strategic partnerships:</strong> Actively seeking partnerships and alliances that complement our strengths, fill gaps in our expertise, and expand our reach, creating mutually beneficial relationships.</li>
+              <li><strong>Customer and community engagement:</strong> Involving customers and community members in the development and refinement of our products and services, ensuring our solutions are both innovative and relevant.</li>
+              <li><strong>Co-creation and open innovation:</strong> Embracing the principles of co-creation and open innovation to involve a wider community in our problem-solving processes, enriching our innovation pipeline with a diversity of ideas and perspectives.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-neutral-950 mb-3">Why it matters:</h3>
+            <p>
+              Through collaboration, we not only accelerate our own growth but also contribute to the advancement of our industry and the betterment of society. Collaboration amplifies our impact, enabling us to achieve what we could not accomplish alone. Moreover, engaging customers and communities in our collaborative processes ensures that our solutions are grounded in real-world needs and have a positive impact.
+            </p>
+          </div>
+        </div>
+      </Modal>
+    </>
   )
 }
 
@@ -61,69 +318,9 @@ const team = [
     title: 'Leadership',
     people: [
       {
-        name: 'Leslie Alexander',
-        role: 'Co-Founder / CEO',
-        image: { src: imageLeslieAlexander },
-      },
-      {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        image: { src: imageMichaelFoster },
-      },
-      {
-        name: 'Dries Vincent',
-        role: 'Partner & Business Relations',
-        image: { src: imageDriesVincent },
-      },
-    ],
-  },
-  {
-    title: 'Team',
-    people: [
-      {
-        name: 'Chelsea Hagon',
-        role: 'Senior Developer',
-        image: { src: imageChelseaHagon },
-      },
-      {
-        name: 'Emma Dorsey',
-        role: 'Senior Designer',
-        image: { src: imageEmmaDorsey },
-      },
-      {
-        name: 'Leonard Krasner',
-        role: 'VP, User Experience',
-        image: { src: imageLeonardKrasner },
-      },
-      {
-        name: 'Blake Reid',
-        role: 'Junior Copywriter',
-        image: { src: imageBlakeReid },
-      },
-      {
-        name: 'Kathryn Murphy',
-        role: 'VP, Human Resources',
-        image: { src: imageKathrynMurphy },
-      },
-      {
-        name: 'Whitney Francis',
-        role: 'Content Specialist',
-        image: { src: imageWhitneyFrancis },
-      },
-      {
-        name: 'Jeffrey Webb',
-        role: 'Account Coordinator',
-        image: { src: imageJeffreyWebb },
-      },
-      {
-        name: 'Benjamin Russel',
-        role: 'Senior Developer',
-        image: { src: imageBenjaminRussel },
-      },
-      {
-        name: 'Angela Fisher',
-        role: 'Front-end Developer',
-        image: { src: imageAngelaFisher },
+        name: 'John Lee',
+        role: 'Founder',
+        image: { src: getAssetPath('/john lee.jpg'), width: 400, height: 400 },
       },
     ],
   },
@@ -136,39 +333,34 @@ function Team() {
         {team.map((group) => (
           <FadeInStagger key={group.title}>
             <Border as={FadeIn} />
-            <div className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8">
+            <div className="pt-12 sm:pt-16">
               <FadeIn>
-                <h2 className="font-display text-2xl font-semibold text-neutral-950">
+                <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-12">
                   {group.title}
                 </h2>
               </FadeIn>
-              <div className="lg:col-span-3">
-                <ul
-                  role="list"
-                  className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8"
-                >
+              <div className="flex justify-center">
+                <div className="max-w-md">
                   {group.people.map((person) => (
-                    <li key={person.name}>
-                      <FadeIn>
-                        <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
-                          <Image
-                            alt=""
-                            {...person.image}
-                            className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
-                            <p className="font-display text-base/6 font-semibold tracking-wide text-white">
-                              {person.name}
-                            </p>
-                            <p className="mt-2 text-sm text-white">
-                              {person.role}
-                            </p>
-                          </div>
+                    <FadeIn key={person.name}>
+                      <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
+                        <Image
+                          alt=""
+                          {...person.image}
+                          className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
+                          <p className="font-display text-base/6 font-semibold tracking-wide text-white">
+                            {person.name}
+                          </p>
+                          <p className="mt-2 text-sm text-white">
+                            {person.role}
+                          </p>
                         </div>
-                      </FadeIn>
-                    </li>
+                      </div>
+                    </FadeIn>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           </FadeInStagger>
@@ -178,31 +370,22 @@ function Team() {
   )
 }
 
-export const metadata: Metadata = {
-  title: 'Experience & Expertise',
-  description:
-    'With backgrounds in scientific research, data science, programming, and software engineering, our team has diverse and valuable experience in providing software solutions.',
-}
-
 export default function About() {
   return (
     <RootLayout>
       <PageIntro eyebrow="About Us" title="Experience & Expertise">
         <p>
-          With backgrounds in scientific research, data science, programming, and software engineering, our team has diverse and valuable experience in providing software solutions to organizations operating in a variety of sectors, industries, and geographies and at different stages.
+          Our team brings diverse expertise in scientific research, data science, programming, and software engineering, serving organizations across various sectors and geographies.
         </p>
 
         <p>
-          Our team has experience working with scientific research institutions, government agencies, energy companies, business infrastructure providers, financial institutions, non-profits, startups, and more.
+          We have extensive experience working with research institutions, government agencies, energy companies, financial institutions, non-profits, and startups worldwide.
         </p>
 
         <p>
-          We&apos;re deeply committed to, and active participants in, the open source community. We&apos;re comfortable working internationally, and we&apos;ve extensive experience delivering on projects with remote and global teams.
+          We are active contributors to the open source community and excel at delivering projects with remote and global teams.
         </p>
 
-        <p>
-          Check out the GitHub below to view some of our projects, code, and more.
-        </p>
         <div className="mt-8">
           <Button href="https://github.com/leej3" target="_blank" rel="noopener noreferrer">
             GitHub
@@ -213,8 +396,6 @@ export default function About() {
       <Culture />
 
       <Team />
-
-      <ContactSection />
     </RootLayout>
   )
 }

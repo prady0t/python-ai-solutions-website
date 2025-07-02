@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import { useId, useState } from 'react'
 import { type Metadata } from 'next'
 import Link from 'next/link'
 
@@ -53,19 +55,84 @@ function RadioInput({
 }
 
 function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitMessage('')
+
+    try {
+      const formDataObj = new FormData(e.currentTarget)
+      
+      // Get form values
+      const name = formDataObj.get('name') as string
+      const email = formDataObj.get('email') as string
+      const company = formDataObj.get('company') as string
+      const phone = formDataObj.get('phone') as string
+      const message = formDataObj.get('message') as string
+      const budgetValue = formDataObj.get('budget') as string
+
+      // Validate required fields
+      if (!name || !email || !message) {
+        setSubmitMessage('Please fill in all required fields.')
+        return
+      }
+
+      // Convert budget value to proper range
+      const getBudgetRange = (value: string) => {
+        switch (value) {
+          case '10': return '$10K – $50K'
+          case '50': return '$50K – $100K'
+          case '100': return '$100K – $150K'
+          case '150': return 'More than $150K'
+          default: return 'Not selected'
+        }
+      }
+
+      // Open email client in browser
+      const subject = `New Contact Form Submission from ${name}`
+      const body = `Name: ${name}
+Email: ${email}
+Company: ${company || 'Not provided'}
+Phone: ${phone || 'Not provided'}
+Budget: ${getBudgetRange(budgetValue)}
+
+Message:
+${message}`
+
+      // Try Gmail compose URL first (most common)
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rickprimeranjan@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      
+      // Open Gmail compose in new tab
+      window.open(gmailUrl, '_blank')
+      
+      // Reset form after successful submission
+      e.currentTarget.reset()
+      
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitMessage('There was an error. Please try again or contact us directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <FadeIn className="lg:order-last">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Work inquiries
         </h2>
         <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-          <TextInput label="Name" name="name" autoComplete="name" />
+          <TextInput label="Name" name="name" autoComplete="name" required />
           <TextInput
             label="Email"
             type="email"
             name="email"
             autoComplete="email"
+            required
           />
           <TextInput
             label="Company"
@@ -73,12 +140,12 @@ function ContactForm() {
             autoComplete="organization"
           />
           <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
-          <TextInput label="Message" name="message" />
+          <TextInput label="Message" name="message" required />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
               <legend className="text-base/6 text-neutral-500">Budget</legend>
               <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <RadioInput label="$25K – $50K" name="budget" value="25" />
+                <RadioInput label="$10K – $50K" name="budget" value="10" />
                 <RadioInput label="$50K – $100K" name="budget" value="50" />
                 <RadioInput label="$100K – $150K" name="budget" value="100" />
                 <RadioInput label="More than $150K" name="budget" value="150" />
@@ -86,8 +153,19 @@ function ContactForm() {
             </fieldset>
           </div>
         </div>
-        <Button type="submit" className="mt-10">
-          Let’s work together
+        
+        {submitMessage && (
+          <div className={`mt-6 p-4 rounded-lg ${
+            submitMessage.includes('error') 
+              ? 'bg-red-50 border border-red-200 text-red-800' 
+              : 'bg-green-50 border border-green-200 text-green-800'
+          }`}>
+            <p>{submitMessage}</p>
+          </div>
+        )}
+        
+        <Button type="submit" className="mt-10" disabled={isSubmitting}>
+          {isSubmitting ? 'Opening Email...' : "Let's work together"}
         </Button>
       </form>
     </FadeIn>
@@ -98,12 +176,8 @@ function ContactDetails() {
   return (
     <FadeIn>
       <h2 className="font-display text-base font-semibold text-neutral-950">
-        Our offices
+        Based in
       </h2>
-      <p className="mt-6 text-base text-neutral-600">
-        Prefer doing things in person? We don’t but we have to list our
-        addresses here for legal reasons.
-      </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
@@ -113,8 +187,8 @@ function ContactDetails() {
         </h2>
         <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
           {[
-            ['Careers', 'careers@studioagency.com'],
-            ['Press', 'press@studioagency.com'],
+            ['Support', 'support@pythonaisolutions.com'],
+            ['Sales', 'sales@pythonaisolutions.com'],
           ].map(([label, email]) => (
             <div key={email}>
               <dt className="font-semibold text-neutral-950">{label}</dt>
@@ -141,16 +215,11 @@ function ContactDetails() {
   )
 }
 
-export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Let’s work together. We can’t wait to hear from you.',
-}
-
 export default function Contact() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Contact us" title="Let’s work together">
-        <p>We can’t wait to hear from you.</p>
+      <PageIntro eyebrow="Contact us" title="Let&apos;s work together">
+        <p>We can&apos;t wait to hear from you.</p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">

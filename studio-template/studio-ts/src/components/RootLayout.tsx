@@ -73,7 +73,7 @@ function Header({
                 invert ? 'text-white hover:text-neutral-200' : 'text-neutral-950 hover:text-neutral-600'
               )}
             >
-              Experience & Expertise
+              About Us
             </Link>
             <Link
               href="/process"

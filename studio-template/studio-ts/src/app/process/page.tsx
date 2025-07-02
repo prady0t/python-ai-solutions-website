@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { type Metadata } from 'next'
+import Image from 'next/image'
 
 import { Blockquote } from '@/components/Blockquote'
 import { ContactSection } from '@/components/ContactSection'
@@ -19,6 +19,7 @@ import imageLaptop from '@/images/laptop.jpg'
 import imageMeeting from '@/images/meeting.jpg'
 import imageWhiteboard from '@/images/whiteboard.jpg'
 import { RootLayout } from '@/components/RootLayout'
+import { getAssetPath } from '@/lib/basePath'
 
 function Section({
   title,
@@ -157,6 +158,15 @@ export default function Process() {
   return (
     <RootLayout>
       <PageIntro eyebrow="Our Mission" title="What We Want">
+        <div className="flex justify-center mb-8">
+          <Image
+            src="/our%20mission.png"
+            alt="Our Mission"
+            width={600}
+            height={400}
+            className="rounded-lg shadow-lg object-cover"
+          />
+        </div>
         <p>
           Our mission is to empower small and medium-sized enterprises (SMEs) and nonprofits to unlock their full potential, embrace AI technology, and thrive in a digital-first era. We are committed to the democratization of AI, believing in its capacity to transform the world for the better. Our goal is to level the technological playing field and provide organizations with accessible, customized AI solutions that enable them to fully harness their data and streamline their operations amid rapid technological advancements. In all our endeavors, we are guided by our core values of integrity, digital stewardship, antifragility, and collaboration.
         </p>
@@ -214,7 +224,7 @@ export default function Process() {
             Our commitment to digital stewardship complements our integrity: we navigate the evolving digital landscape ethically, balancing the use of open-source ecosystems and proprietary technologies to drive forward-thinking solutions while considering the profound impact our work has on society.
           </p>
           <p>
-            Antifragility— a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world&apos;s inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
+            Antifragility— a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world's inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
           </p>
           <p>
             Collaboration is the thread that weaves together our values, amplifying their impact. By fostering a culture of collaboration both internally and externally, we harness the collective power of diverse minds working towards a shared vision. This collaborative spirit extends beyond our organizational boundaries, engaging customers, communities, and partners in a co-creative process that ensures our solutions are grounded in real-world needs.
