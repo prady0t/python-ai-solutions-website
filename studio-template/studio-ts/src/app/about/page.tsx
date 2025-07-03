@@ -153,24 +153,39 @@ function Culture() {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Our Mission & Core Values"
+        title="Our Mission"
       >
         <div className="space-y-8">
-          <p>
-            Our company is founded on a bedrock of core values that guide our mission and shape our approach to business. Integrity is the heart of our ethos, ensuring that every action we take is done with honesty, ethical conduct, and unwavering moral principles. This foundational value fosters trust and transparency with our clients, employees, and partners, creating a positive ripple effect throughout our industry and community.
-          </p>
-          <p>
-            Our commitment to digital stewardship complements our integrity: we navigate the evolving digital landscape ethically, balancing the use of open-source ecosystems and proprietary technologies to drive forward-thinking solutions while considering the profound impact our work has on society.
-          </p>
-          <p>
-            Antifragility— a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world's inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
-          </p>
-          <p>
-            Collaboration is the thread that weaves together our values, amplifying their impact. By fostering a culture of collaboration both internally and externally, we harness the collective power of diverse minds working towards a shared vision. This collaborative spirit extends beyond our organizational boundaries, engaging customers, communities, and partners in a co-creative process that ensures our solutions are grounded in real-world needs.
-          </p>
-          <p>
-            Together, these values form the pillars of our company and propel us towards achieving our mission of delivering exceptional value, driving long-lasting growth, and making a meaningful difference in the world.
-          </p>
+          <div className="flex justify-center">
+            <Image
+              src={getAssetPath('/our mission.png')}
+              alt="Our Mission"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold text-neutral-950">What We Want</h3>
+            <p>
+              Our mission is to empower SMEs and nonprofits with accessible AI solutions, democratizing technology to help organizations thrive in the digital era. We provide customized AI solutions that enable organizations to harness their data and streamline operations.
+            </p>
+            <p>
+              Our company is founded on a bedrock of core values that guide our mission and shape our approach to business. Integrity is the heart of our ethos, ensuring that every action we take is done with honesty, ethical conduct, and unwavering moral principles. This foundational value fosters trust and transparency with our clients, employees, and partners, creating a positive ripple effect throughout our industry and community.
+            </p>
+            <p>
+              Our commitment to digital stewardship complements our integrity: we navigate the evolving digital landscape ethically, balancing the use of open-source ecosystems and proprietary technologies to drive forward-thinking solutions while considering the profound impact our work has on society.
+            </p>
+            <p>
+              Antifragility— a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world's inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
+            </p>
+            <p>
+              Collaboration is the thread that weaves together our values, amplifying their impact. By fostering a culture of collaboration both internally and externally, we harness the collective power of diverse minds working towards a shared vision. This collaborative spirit extends beyond our organizational boundaries, engaging customers, communities, and partners in a co-creative process that ensures our solutions are grounded in real-world needs.
+            </p>
+            <p>
+              Together, these values form the pillars of our company and propel us towards achieving our mission of delivering exceptional value, driving long-lasting growth, and making a meaningful difference in the world.
+            </p>
+          </div>
         </div>
       </Modal>
 

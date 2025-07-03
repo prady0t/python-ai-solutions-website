@@ -158,15 +158,6 @@ export default function Process() {
   return (
     <RootLayout>
       <PageIntro eyebrow="Our Mission" title="What We Want">
-        <div className="flex justify-center mb-8">
-          <Image
-            src="/our%20mission.png"
-            alt="Our Mission"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-lg object-cover"
-          />
-        </div>
         <p>
           Our mission is to empower small and medium-sized enterprises (SMEs) and nonprofits to unlock their full potential, embrace AI technology, and thrive in a digital-first era. We are committed to the democratization of AI, believing in its capacity to transform the world for the better. Our goal is to level the technological playing field and provide organizations with accessible, customized AI solutions that enable them to fully harness their data and streamline their operations amid rapid technological advancements. In all our endeavors, we are guided by our core values of integrity, digital stewardship, antifragility, and collaboration.
         </p>
