@@ -51,7 +51,7 @@ function Culture() {
               We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work.
             </GridListItem>
             <GridListItem title="Antifragility" invert>
-              Antifragility is a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges.
+              Antifragility is a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges.
             </GridListItem>
             <GridListItem title="Collaboration" invert>
               Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision
@@ -177,7 +177,7 @@ function Culture() {
               Our commitment to digital stewardship complements our integrity: we navigate the evolving digital landscape ethically, balancing the use of open-source ecosystems and proprietary technologies to drive forward-thinking solutions while considering the profound impact our work has on society.
             </p>
             <p>
-              Antifragility— a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world's inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
+              Antifragility— a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges— transforms how we perceive and interact with the world&apos;s inherent disorder. We turn potential disruptions into catalysts for growth and innovation. This approach allows us to lead in our industry with confidence, responding to new information and conditions with a forward-thinking mindset that actively seeks and uses change for continuous improvement. Thriving in the face of the unpredictable is a fundamental part of our identity.
             </p>
             <p>
               Collaboration is the thread that weaves together our values, amplifying their impact. By fostering a culture of collaboration both internally and externally, we harness the collective power of diverse minds working towards a shared vision. This collaborative spirit extends beyond our organizational boundaries, engaging customers, communities, and partners in a co-creative process that ensures our solutions are grounded in real-world needs.
@@ -266,7 +266,7 @@ function Culture() {
       >
         <div className="space-y-6">
           <p>
-            Antifragility is a system's or organization's capacity to grow stronger in response to stressors, volatility, and challenges. This core value stands at the heart of our business ethos, signifying our commitment to not only navigate but excel in the face of uncertainty and change.
+            Antifragility is a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges. This core value stands at the heart of our business ethos, signifying our commitment to not only navigate but excel in the face of uncertainty and change.
           </p>
           <p>
             We proactively embrace the unpredictable, viewing every challenge and bit of randomness as a springboard for growth, innovation, and systemic enhancement. It shapes our approach to strategy, culture, and development, ensuring we benefit from disruptions.

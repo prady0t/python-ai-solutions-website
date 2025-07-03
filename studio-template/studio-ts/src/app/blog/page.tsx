@@ -110,7 +110,7 @@ export default function Clientele() {
                         </div>
                       </div>
                       <blockquote className="mt-6 max-w-2xl text-lg text-neutral-600 italic">
-                        "{client.testimonial}"
+                        &ldquo;{client.testimonial}&rdquo;
                       </blockquote>
                       <div className="mt-6 text-sm text-neutral-950">
                         <div className="font-semibold">{client.author}</div>
@@ -138,7 +138,7 @@ export default function Clientele() {
               Ready to Join Our Success Stories?
             </h2>
             <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our AI solutions can help your organization achieve its goals.
+              Let&apos;s discuss how our AI solutions can help your organization achieve its goals.
             </p>
             <Button href="/contact" size="large">
               Get Started Today
