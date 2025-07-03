@@ -140,7 +140,7 @@ export default function Clientele() {
             <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
               Let&apos;s discuss how our AI solutions can help your organization achieve its goals.
             </p>
-            <Button href="/contact" size="large">
+            <Button href="/contact">
               Get Started Today
             </Button>
           </div>
