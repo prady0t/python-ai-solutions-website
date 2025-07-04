@@ -29,6 +29,7 @@ function Header({
   invert?: boolean
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)!
+  let pathname = usePathname()
 
   return (
     <Container>
@@ -52,7 +53,11 @@ function Header({
               href="/"
               className={clsx(
                 'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                invert ? 'text-white hover:text-neutral-200' : 'text-neutral-950 hover:text-neutral-600'
+                pathname === '/' || pathname === '' 
+                  ? 'text-[#31b9fd]' 
+                  : invert 
+                    ? 'text-white hover:text-[#31b9fd]' 
+                    : 'text-neutral-950 hover:text-[#31b9fd]'
               )}
             >
               Home
@@ -61,7 +66,11 @@ function Header({
               href="/work"
               className={clsx(
                 'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                invert ? 'text-white hover:text-neutral-200' : 'text-neutral-950 hover:text-neutral-600'
+                pathname.startsWith('/work') 
+                  ? 'text-[#31b9fd]' 
+                  : invert 
+                    ? 'text-white hover:text-[#31b9fd]' 
+                    : 'text-neutral-950 hover:text-[#31b9fd]'
               )}
             >
               Services
@@ -70,31 +79,35 @@ function Header({
               href="/about"
               className={clsx(
                 'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                invert ? 'text-white hover:text-neutral-200' : 'text-neutral-950 hover:text-neutral-600'
+                pathname.startsWith('/about') 
+                  ? 'text-[#31b9fd]' 
+                  : invert 
+                    ? 'text-white hover:text-[#31b9fd]' 
+                    : 'text-neutral-950 hover:text-[#31b9fd]'
               )}
             >
               About Us
             </Link>
-            <Link
-              href="/process"
-              className={clsx(
-                'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                invert ? 'text-white hover:text-neutral-200' : 'text-neutral-950 hover:text-neutral-600'
-              )}
-            >
-              Our Mission
-            </Link>
+
             <Link
               href="/blog"
               className={clsx(
                 'font-display text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:scale-105',
-                invert ? 'text-white hover:text-neutral-200' : 'text-neutral-950 hover:text-neutral-600'
+                pathname.startsWith('/blog') 
+                  ? 'text-[#31b9fd]' 
+                  : invert 
+                    ? 'text-white hover:text-[#31b9fd]' 
+                    : 'text-neutral-950 hover:text-[#31b9fd]'
               )}
             >
               Clientele
             </Link>
           </nav>
-          <Button href="/contact" invert={invert}>
+          <Button 
+            href="/contact" 
+            invert={invert}
+            className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
+          >
             Contact us
           </Button>
         </div>

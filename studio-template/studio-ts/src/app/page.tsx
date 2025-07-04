@@ -104,7 +104,13 @@ function CaseStudies() {
   return (
     <>
       <SectionIntro
-        title="Transforming businesses with AI-powered solutions"
+        title={
+          <span>
+            Transforming businesses with{' '}
+            <span style={{ color: '#31b9fd' }}>AI</span>
+            -powered solutions
+          </span>
+        }
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
@@ -146,7 +152,11 @@ function Services() {
   return (
     <>
       <SectionIntro
-        eyebrow="AI Services"
+        eyebrow={
+          <span>
+            <span style={{ color: '#31b9fd' }}>AI</span> Services
+          </span>
+        }
         title="We help you harness the power of artificial intelligence."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
@@ -168,21 +178,28 @@ function Services() {
           </div>
           <div className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
             <List>
-              <ListItem title="Data Analytics and Insight Generation">
+              <ListItem>
+                <strong style={{ color: '#31b9fd' }}>Data Analytics and Insight Generation.</strong>{' '}
                 Our data analytics services help you make informed decisions, uncover new opportunities, and optimize your business processes for maximum efficiency.
               </ListItem>
-              <ListItem title="Automation Services">
+              <ListItem>
+                <strong style={{ color: '#31b9fd' }}>Automation Services.</strong>{' '}
                 From automating repetitive tasks to optimizing workflows, our services free up your resources, allowing you to focus on strategic business activities.
               </ListItem>
-              <ListItem title="Custom AI Solutions">
+              <ListItem>
+                <strong style={{ color: '#31b9fd' }}>Custom AI Solutions.</strong>{' '}
                 Get AI solutions that are tailor-made for your business needs. Whether it&apos;s enhancing operational efficiency, improving customer experiences, or innovating your product offerings, our custom AI development is here to transform your vision into reality.
               </ListItem>
-              <ListItem title="AI Training and Support">
+              <ListItem>
+                <strong style={{ color: '#31b9fd' }}>AI Training and Support.</strong>{' '}
                 Empower your team with the knowledge to harness AI effectively. Our comprehensive training programs coupled with ongoing support ensure that your staff are well equipped to use AI tools and solutions.
               </ListItem>
             </List>
             <div className="mt-8">
-              <Button href="/work">
+              <Button 
+                href="/work"
+                className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
+              >
                 Learn More
               </Button>
             </div>

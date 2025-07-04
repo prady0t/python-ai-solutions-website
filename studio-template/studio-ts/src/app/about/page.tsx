@@ -36,7 +36,11 @@ function Culture() {
             Our mission is to empower SMEs and nonprofits with accessible AI solutions, democratizing technology to help organizations thrive in the digital era. We provide customized AI solutions that enable organizations to harness their data and streamline operations.
           </p>
           <div className="mt-8">
-            <Button onClick={() => setIsModalOpen(true)} invert>
+            <Button 
+              onClick={() => setIsModalOpen(true)} 
+              invert
+              className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
+            >
               Learn More
             </Button>
           </div>
@@ -44,16 +48,16 @@ function Culture() {
         <Container className="mt-16">
           <h3 className="font-display text-base font-semibold text-white mb-12">Core Values</h3>
           <GridList>
-            <GridListItem title="Integrity" invert>
+            <GridListItem title={<span style={{ color: '#31b9fd' }}>Integrity</span>} invert>
               This captures the essence of integrity as a core value that encompasses multiple virtues and guides consistent ethical behavior.
             </GridListItem>
-            <GridListItem title="Digital Stewardship" invert>
+            <GridListItem title={<span style={{ color: '#31b9fd' }}>Digital Stewardship</span>} invert>
               We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work.
             </GridListItem>
-            <GridListItem title="Antifragility" invert>
+            <GridListItem title={<span style={{ color: '#31b9fd' }}>Antifragility</span>} invert>
               Antifragility is a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges.
             </GridListItem>
-            <GridListItem title="Collaboration" invert>
+            <GridListItem title={<span style={{ color: '#31b9fd' }}>Collaboration</span>} invert>
               Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision
             </GridListItem>
           </GridList>
@@ -62,7 +66,7 @@ function Culture() {
             <div className="pl-8">
               <button
                 onClick={() => setIsIntegrityModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
               >
                 Learn More
                 <svg
@@ -84,7 +88,7 @@ function Culture() {
             <div className="pl-8">
               <button
                 onClick={() => setIsTrustModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
               >
                 Learn More
                 <svg
@@ -106,7 +110,7 @@ function Culture() {
             <div className="pl-8">
               <button
                 onClick={() => setIsCompassion1ModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
               >
                 Learn More
                 <svg
@@ -128,7 +132,7 @@ function Culture() {
             <div className="pl-8">
               <button
                 onClick={() => setIsCompassion2ModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors"
+                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
               >
                 Learn More
                 <svg
@@ -354,27 +358,58 @@ function Team() {
                   {group.title}
                 </h2>
               </FadeIn>
-              <div className="flex justify-center">
-                <div className="max-w-md">
-                  {group.people.map((person) => (
-                    <FadeIn key={person.name}>
-                      <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
-                        <Image
-                          alt=""
-                          {...person.image}
-                          className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
-                          <p className="font-display text-base/6 font-semibold tracking-wide text-white">
-                            {person.name}
-                          </p>
-                          <p className="mt-2 text-sm text-white">
-                            {person.role}
-                          </p>
-                        </div>
+              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-x-12">
+                {/* Photo on the left */}
+                <div className="lg:w-1/2 mb-8 lg:mb-0">
+                  <FadeIn>
+                    <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
+                      <Image
+                        alt="John Lee - Founder"
+                        src={getAssetPath('/john lee.jpg')}
+                        width={400}
+                        height={400}
+                        className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
+                        style={{ objectPosition: 'center 20%' }}
+                      />
+                    </div>
+                  </FadeIn>
+                </div>
+                
+                {/* Information on the right */}
+                <div className="lg:w-1/2">
+                  <FadeIn>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="font-display text-2xl font-semibold text-neutral-950">
+                          John Lee
+                        </h3>
+                        <p className="text-lg text-neutral-600 mt-2">
+                          Founder
+                        </p>
                       </div>
-                    </FadeIn>
-                  ))}
+                      
+                      <div className="space-y-4 text-base text-neutral-600">
+                        <p>
+                          Data and open source software enthusiast with a background in Neuroscience. 
+                          John brings extensive expertise in scientific research, data science, and software engineering.
+                        </p>
+                        
+                        <p>
+                          With experience at Trinity College Dublin and a strong foundation in research, 
+                          John has published multiple papers in neuroscience and brain segmentation, 
+                          demonstrating deep technical knowledge and analytical capabilities.
+                        </p>
+                        
+                        <p>
+                          He is passionate about democratizing AI technology and making it accessible 
+                          to SMEs and nonprofits, combining his technical expertise with a commitment 
+                          to ethical and responsible AI development.
+                        </p>
+                      </div>
+                      
+
+                    </div>
+                  </FadeIn>
                 </div>
               </div>
             </div>
@@ -388,7 +423,7 @@ function Team() {
 export default function About() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="About Us" title="Experience & Expertise">
+      <PageIntro title="About Us">
         <p>
           Our team brings diverse expertise in scientific research, data science, programming, and software engineering, serving organizations across various sectors and geographies.
         </p>

@@ -10,7 +10,6 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Offices } from '@/components/Offices'
 import { PageIntro } from '@/components/PageIntro'
-import { SocialMedia } from '@/components/SocialMedia'
 import { RootLayout } from '@/components/RootLayout'
 
 function TextInput({
@@ -164,7 +163,11 @@ ${message}`
           </div>
         )}
         
-        <Button type="submit" className="mt-10" disabled={isSubmitting}>
+        <Button 
+          type="submit" 
+          className="mt-10 transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white" 
+          disabled={isSubmitting}
+        >
           {isSubmitting ? 'Opening Email...' : "Let's work together"}
         </Button>
       </form>
@@ -205,12 +208,7 @@ function ContactDetails() {
         </dl>
       </Border>
 
-      <Border className="mt-16 pt-16">
-        <h2 className="font-display text-base font-semibold text-neutral-950">
-          Follow us
-        </h2>
-        <SocialMedia className="mt-6" />
-      </Border>
+
     </FadeIn>
   )
 }

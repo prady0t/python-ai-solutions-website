@@ -71,123 +71,145 @@ function ServicesList() {
               <Border className="grid grid-cols-1 gap-x-8 gap-y-8 pt-16 lg:grid-cols-12">
                 {index === 0 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/services_1.png")}
-                      alt="Data Analytics and Insight Generation"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/services_1.png")}
+                        alt="Data Analytics and Insight Generation"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 1 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 2.png")}
-                      alt="Automation Services"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 2.png")}
+                        alt="Automation Services"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 2 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 3.png")}
-                      alt="Predictive Analytics"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 3.png")}
+                        alt="Predictive Analytics"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 3 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 4.png")}
-                      alt="Collaborative AI Projects"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 4.png")}
+                        alt="Collaborative AI Projects"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 4 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 5.png")}
-                      alt="Custom AI Solutions"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 5.png")}
+                        alt="Custom AI Solutions"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 5 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 6.png")}
-                      alt="AI Training and Support"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 6.png")}
+                        alt="AI Training and Support"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 6 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 7.png")}
-                      alt="Natural Language Processing (NLP)"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 7.png")}
+                        alt="Natural Language Processing (NLP)"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 7 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 8.png")}
-                      alt="Sustainability Solutions"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 8.png")}
+                        alt="Sustainability Solutions"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 8 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 9.png")}
-                      alt="AI Consultation and Strategic Planning"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 9.png")}
+                        alt="AI Consultation and Strategic Planning"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 9 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 10.png")}
-                      alt="Ethical AI Advisory"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 10.png")}
+                        alt="Ethical AI Advisory"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 {index === 10 && (
                   <div className="lg:col-span-4 flex justify-center items-center">
-                    <Image
-                      src={getAssetPath("/service 11.png")}
-                      alt="Images processing"
-                      width={400}
-                      height={300}
-                      className="rounded-lg shadow-lg object-cover"
-                    />
+                    <div className="p-4 rounded-xl bg-gradient-to-br from-[#31b9fd]/15 via-[#31b9fd]/8 to-transparent border border-[#31b9fd]/20 shadow-[0_8px_32px_rgba(49,185,253,0.25),0_4px_16px_rgba(49,185,253,0.15)] hover:shadow-[0_12px_40px_rgba(49,185,253,0.35),0_6px_20px_rgba(49,185,253,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-500 transform">
+                      <Image
+                        src={getAssetPath("/service 11.png")}
+                        alt="Images processing"
+                        width={400}
+                        height={300}
+                        className="rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] object-cover"
+                      />
+                    </div>
                   </div>
                 )}
                 <div className="lg:col-span-8 lg:pt-8">

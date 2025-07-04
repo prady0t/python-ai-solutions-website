@@ -20,7 +20,11 @@ export function ContactSection() {
               </p>
             </div>
             <div className="mt-8 flex">
-              <Button href="/contact" invert>
+              <Button 
+                href="/contact" 
+                invert
+                className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
+              >
                 Contact Us
               </Button>
             </div>
