@@ -27,14 +27,6 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Debug - List files
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Contents of studio-ts:"
-          ls -la studio-ts/
-          echo "Package files in studio-ts:"
-          ls -la studio-ts/package*
-          
       - name: Install dependencies
         run: npm install
         working-directory: ./studio-ts
