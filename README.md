@@ -30,22 +30,3 @@ This repository contains the main website built with Next.js and TypeScript:
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 📖 Documentation
-
-For detailed information about the website setup, customization, and deployment, see:
-- [studio-ts/README.md](studio-ts/README.md) - Complete documentation
-
-## 🛠️ Tech Stack
-
-- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
-- **Content**: MDX for rich content management
-- **Animations**: Framer Motion
-- **Deployment**: Ready for Vercel, Netlify, or static hosting
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
-
-For questions and support, please refer to the documentation in the `studio-ts/` directory.
