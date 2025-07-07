@@ -27,22 +27,22 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: 'studio-template/studio-ts/package-lock.json'
+          cache-dependency-path: 'studio-ts/package-lock.json'
           
       - name: Install dependencies
         run: npm ci
-        working-directory: ./studio-template/studio-ts
+        working-directory: ./studio-ts
         
       - name: Build with Next.js
         run: npm run build
-        working-directory: ./studio-template/studio-ts
+        working-directory: ./studio-ts
         env:
           NODE_ENV: production
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./studio-template/studio-ts/out
+          path: ./studio-ts/out
 
   deploy:
     environment:
