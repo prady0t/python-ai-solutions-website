@@ -52,7 +52,7 @@ const projects = [
       author: { name: 'Sarah Johnson', role: 'CEO' }
     },
     detailedReport: {
-      summary: `Python AI Solutions revolutionized our nonprofit's approach to community engagement through intelligent data analytics and predictive modeling. Their expertise transformed our raw data into actionable insights that directly improved our service delivery.`,
+      summary: `Python AI Solutions revolutionized our nonprofit&apos;s approach to community engagement through intelligent data analytics and predictive modeling. Their expertise transformed our raw data into actionable insights that directly improved our service delivery and donor engagement.`,
       achievements: [
         'Developed custom AI algorithms for donor behavior prediction',
         'Implemented automated data processing reducing manual work by 80%',
@@ -65,7 +65,7 @@ const projects = [
         { value: '85%', label: 'Improvement in service efficiency' },
         { value: '2.5M', label: 'Additional funds raised' }
       ],
-      fullTestimonial: `Working with Python AI Solutions was a game-changer for our organization. Their team didn't just deliver technology—they delivered transformation. The AI solutions they built helped us understand our community better than ever before, leading to more effective programs and increased donor engagement. Their expertise in both technical implementation and nonprofit operations made them the perfect partner for our mission.`
+      fullTestimonial: `Working with Python AI Solutions was a game-changer for our organization. Their team didn&apos;t just deliver technology—they delivered transformation. The AI solutions they built helped us understand our community better than ever before, leading to more effective programs and increased donor engagement. Their expertise in both technical implementation and nonprofit operations made them the perfect partner for our mission.`
     }
   },
   {
@@ -557,7 +557,7 @@ function CaseStudies() {
             <div className="bg-gradient-to-r from-[#31b9fd]/10 to-transparent p-4 sm:p-6 rounded-xl border-l-4 border-[#31b9fd]">
               <h3 className="text-base sm:text-lg font-semibold text-neutral-950 mb-2 sm:mb-3">Client Testimonial</h3>
               <blockquote className="text-sm sm:text-base text-neutral-700 italic leading-relaxed">
-                "{selectedTestimonial.detailedReport?.fullTestimonial}"
+                &quot;{selectedTestimonial.detailedReport?.fullTestimonial}&quot;
               </blockquote>
               <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-neutral-600">
                 — {selectedTestimonial.testimonial?.author?.name}, {selectedTestimonial.testimonial?.author?.role} at {selectedTestimonial.client}
@@ -614,7 +614,7 @@ function Services() {
                 <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-[#31b9fd]/20 transition-colors">
                   <h3 className="font-semibold text-[#31b9fd] mb-3">Custom AI Solutions</h3>
                   <p className="text-sm text-neutral-600">
-                    Get AI solutions that are tailor-made for your business needs. Whether it's enhancing operational efficiency, improving customer experiences, or innovating your product offerings.
+                    Get AI solutions that are tailor-made for your business needs. Whether it&apos;s enhancing operational efficiency, improving customer experiences, or innovating your product offerings.
                   </p>
                 </div>
               </FadeIn>

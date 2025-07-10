@@ -313,9 +313,9 @@ function TestimonialGuidance() {
           <div className="bg-[#31b9fd]/10 border border-[#31b9fd]/20 rounded-xl p-4 sm:p-6">
             <h4 className="font-semibold text-[#31b9fd] mb-2 text-sm sm:text-base">Example Structure</h4>
             <p className="text-neutral-600 text-xs sm:text-sm">
-              "We were struggling with [challenge]. Python AI Solutions helped us 
+              &quot;We were struggling with [challenge]. Python AI Solutions helped us 
               [solution] which resulted in [specific outcome]. The team was 
-              [professional qualities] and delivered [timeline/quality]."
+              [professional qualities] and delivered [timeline/quality].&quot;
             </p>
           </div>
         </Border>
