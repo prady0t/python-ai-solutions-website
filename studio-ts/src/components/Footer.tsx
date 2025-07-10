@@ -114,8 +114,8 @@ export function Footer() {
               priority
             />
           </Link>
-          <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+          <p className="text-sm text-neutral-500">
+            © Python AI Solutions 2023-2025
           </p>
         </div>
       </FadeIn>

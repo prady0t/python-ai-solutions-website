@@ -84,7 +84,7 @@ export default function Clientele() {
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <h2 className="font-display text-2xl font-semibold text-neutral-950 text-center mb-16">
-            Client Success Stories
+            Client Success Stories & Support/Testimonials
           </h2>
         </FadeIn>
         <div className="space-y-24 lg:space-y-32">
@@ -120,7 +120,7 @@ export default function Clientele() {
                         href="/contact"
                         className="mt-8"
                       >
-                        Learn More
+                        See full text
                       </Button>
                     </div>
                   </div>

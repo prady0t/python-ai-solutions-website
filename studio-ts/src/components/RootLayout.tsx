@@ -8,7 +8,7 @@ import {
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { motion, MotionConfig } from 'framer-motion'
+import { motion, MotionConfig, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
 import { Button } from '@/components/Button'
@@ -30,6 +30,15 @@ function Header({
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)!
   let pathname = usePathname()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <Container>
@@ -47,7 +56,9 @@ function Header({
             priority
           />
         </Link>
-        <div className="flex items-center gap-x-4 sm:gap-x-8">
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-x-4 sm:gap-x-8">
           <nav className="flex items-center gap-x-3 sm:gap-x-8">
             <Link
               href="/"
@@ -111,7 +122,100 @@ function Header({
             Contact us
           </Button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMobileMenu}
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
+          aria-label="Toggle mobile menu"
+        >
+          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="md:hidden mt-4 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-neutral-200 overflow-hidden"
+          >
+            <nav className="flex flex-col py-4">
+              <Link
+                href="/"
+                onClick={closeMobileMenu}
+                className={clsx(
+                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  pathname === '/' || pathname === '' 
+                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
+                    : invert 
+                      ? 'text-white hover:text-[#31b9fd]' 
+                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                )}
+              >
+                Home
+              </Link>
+              <Link
+                href="/work"
+                onClick={closeMobileMenu}
+                className={clsx(
+                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  pathname.startsWith('/work') 
+                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
+                    : invert 
+                      ? 'text-white hover:text-[#31b9fd]' 
+                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                )}
+              >
+                Services
+              </Link>
+              <Link
+                href="/about"
+                onClick={closeMobileMenu}
+                className={clsx(
+                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  pathname.startsWith('/about') 
+                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
+                    : invert 
+                      ? 'text-white hover:text-[#31b9fd]' 
+                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                )}
+              >
+                About Us
+              </Link>
+              <Link
+                href="/blog"
+                onClick={closeMobileMenu}
+                className={clsx(
+                  'px-6 py-3 font-display text-base font-semibold tracking-tight transition-all duration-200 hover:bg-neutral-50',
+                  pathname.startsWith('/blog') 
+                    ? 'text-[#31b9fd] bg-[#31b9fd]/10' 
+                    : invert 
+                      ? 'text-white hover:text-[#31b9fd]' 
+                      : 'text-neutral-950 hover:text-[#31b9fd]'
+                )}
+              >
+                Clientele
+              </Link>
+              <div className="px-6 py-3">
+                <Button 
+                  href="/contact" 
+                  invert={invert}
+                  onClick={closeMobileMenu}
+                  className="w-full justify-center transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white"
+                >
+                  Contact us
+                </Button>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Container>
   )
 }

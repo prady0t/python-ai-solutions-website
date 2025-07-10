@@ -49,108 +49,102 @@ function Culture() {
           <h3 className="font-display text-base font-semibold text-white mb-12">Core Values</h3>
           <GridList>
             <GridListItem title={<span style={{ color: '#31b9fd' }}>Integrity</span>} invert>
-              This captures the essence of integrity as a core value that encompasses multiple virtues and guides consistent ethical behavior.
+              <div className="space-y-4">
+                <p>This captures the essence of integrity as a core value that encompasses multiple virtues and guides consistent ethical behavior.</p>
+                <button
+                  onClick={() => setIsIntegrityModalOpen(true)}
+                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                >
+                  Learn More
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
             </GridListItem>
             <GridListItem title={<span style={{ color: '#31b9fd' }}>Digital Stewardship</span>} invert>
-              We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work.
+              <div className="space-y-4">
+                <p>We practice digital stewardship by actively engaging with and supporting the digital ecosystem that sustains our work.</p>
+                <button
+                  onClick={() => setIsTrustModalOpen(true)}
+                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                >
+                  Learn More
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
             </GridListItem>
             <GridListItem title={<span style={{ color: '#31b9fd' }}>Antifragility</span>} invert>
-              Antifragility is a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges.
+              <div className="space-y-4">
+                <p>Antifragility is a system&apos;s or organization&apos;s capacity to grow stronger in response to stressors, volatility, and challenges.</p>
+                <button
+                  onClick={() => setIsCompassion1ModalOpen(true)}
+                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                >
+                  Learn More
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
             </GridListItem>
             <GridListItem title={<span style={{ color: '#31b9fd' }}>Collaboration</span>} invert>
-              Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision
+              <div className="space-y-4">
+                <p>Collaboration embodies our commitment to harnessing the collective power of diverse minds working together towards a shared vision</p>
+                <button
+                  onClick={() => setIsCompassion2ModalOpen(true)}
+                  className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
+                >
+                  Learn More
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
             </GridListItem>
           </GridList>
-          
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="pl-8">
-              <button
-                onClick={() => setIsIntegrityModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
-              >
-                Learn More
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="pl-8">
-              <button
-                onClick={() => setIsTrustModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
-              >
-                Learn More
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="pl-8">
-              <button
-                onClick={() => setIsCompassion1ModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
-              >
-                Learn More
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="pl-8">
-              <button
-                onClick={() => setIsCompassion2ModalOpen(true)}
-                className="inline-flex items-center gap-x-2 text-sm font-semibold text-white hover:text-[#31b9fd] transition-colors"
-              >
-                Learn More
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
         </Container>
       </div>
       
@@ -164,9 +158,9 @@ function Culture() {
             <Image
               src={getAssetPath('/our mission.png')}
               alt="Our Mission"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-lg"
+              width={300}
+              height={300}
+              className="rounded-full border-4 border-neutral-200 shadow-lg object-cover"
             />
           </div>
           <div className="space-y-6">
@@ -407,7 +401,11 @@ function Team() {
                         </p>
                       </div>
                       
-
+                      <div className="mt-6">
+                        <Button href="https://github.com/leej3" target="_blank" rel="noopener noreferrer">
+                          GitHub
+                        </Button>
+                      </div>
                     </div>
                   </FadeIn>
                 </div>
@@ -435,12 +433,6 @@ export default function About() {
         <p>
           We are active contributors to the open source community and excel at delivering projects with remote and global teams.
         </p>
-
-        <div className="mt-8">
-          <Button href="https://github.com/leej3" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </Button>
-        </div>
       </PageIntro>
 
       <Culture />

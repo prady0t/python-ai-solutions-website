@@ -102,7 +102,7 @@ Message:
 ${message}`
 
       // Try Gmail compose URL first (most common)
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rickprimeranjan@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=support@pythonaisolutions.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
       
       // Open Gmail compose in new tab
       window.open(gmailUrl, '_blank')
@@ -142,7 +142,7 @@ ${message}`
           <TextInput label="Message" name="message" required />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
-              <legend className="text-base/6 text-neutral-500">Budget</legend>
+              <legend className="text-base/6 text-neutral-500">Approximate budget</legend>
               <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <RadioInput label="$10K – $50K" name="budget" value="10" />
                 <RadioInput label="$50K – $100K" name="budget" value="50" />
@@ -163,13 +163,15 @@ ${message}`
           </div>
         )}
         
-        <Button 
-          type="submit" 
-          className="mt-10 transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white" 
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Opening Email...' : "Let's work together"}
-        </Button>
+        <div className="flex justify-center mt-10">
+          <Button 
+            type="submit" 
+            className="transition-colors duration-300 hover:!bg-[#31b9fd] hover:!text-white" 
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Opening Email...' : "Let's work together"}
+          </Button>
+        </div>
       </form>
     </FadeIn>
   )
@@ -198,7 +200,7 @@ function ContactDetails() {
               <dd>
                 <Link
                   href={`mailto:${email}`}
-                  className="text-neutral-600 hover:text-neutral-950"
+                  className="text-base/6 text-neutral-500 hover:text-neutral-950"
                 >
                   {email}
                 </Link>
@@ -207,8 +209,6 @@ function ContactDetails() {
           ))}
         </dl>
       </Border>
-
-
     </FadeIn>
   )
 }
